@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name= "namespace"					        default = "drone1"/>
+    <arg name= "estimated_pose_topic" 	            default = "self_localization/pose"/>
+    <arg name= "estimated_speed_topic" 	            default = "self_localization/speed"/>
+    <arg name= "camera_name"					    default = "realsense_t265"/>
+    <arg name= "realsense_odom_topic"			    default = "$(arg camera_name)/odom/sample"/> 
+    
+    <include file="$(find realsense2_camera)/launch/rs_t265.launch">
+      <arg name="camera"              value ="$(arg namespace)/$(arg camera_name)"/>
+	<rosparam>
+	/drone1/camera/tracking_module/frames_queue_size: 16
+      </rosparam>
+
+	<arg name="enable_fisheye1"     value="true"/>
+        <arg name="enable_fisheye2"     value="false"/>
+        <arg name="enable_gyro"         value="false"/>
+        <arg name="enable_accel"        value="false"/>
+
+        <arg name="enable_pose"         value="true"/>
+        <arg name="enable_sync"         value="false"/>
+        <arg name="linear_accel_cov"    value="0.01"/>
+        <!-- <arg name="initial_reset"       value="false"/> -->
+        <arg name="initial_reset"       value="true"/>
+        <arg name="publish_odom_tf"     value="false"/>
+
+    </include>
+
+    <group ns="$(arg namespace)">
+        <param name= "~namespace"                        value="$(arg namespace)"                       type="str" />
+        <param name= "~estimated_pose_topic"             value="$(arg estimated_pose_topic)"            type="str" />
+        <param name= "~estimated_speed_topic"             value="$(arg estimated_speed_topic)"            type="str" />
+        <param name= "~realsense_odom_topic"             value="$(arg realsense_odom_topic)"            type="str" />
+        <node name="realsense_t265_interface" pkg="realsense_t265_interface" type="realsense_t265_interface_node" output="screen"/>
+    </group>
+</launch>
+
