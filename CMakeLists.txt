@@ -11,16 +11,14 @@ find_package(catkin REQUIRED COMPONENTS
   mavros_msgs
   mav_msgs
   nav_msgs
-  robot_process
   tf
   tf2
-  ros_utils_lib
 )
 
 catkin_package(
   INCLUDE_DIRS src/include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp std_msgs geometry_msgs sensor_msgs mavros_msgs robot_process mav_msgs tf ros_utils_lib nav_msgs tf2
+  CATKIN_DEPENDS roscpp std_msgs geometry_msgs sensor_msgs mavros_msgs  mav_msgs tf nav_msgs tf2
   )
 
 include_directories(

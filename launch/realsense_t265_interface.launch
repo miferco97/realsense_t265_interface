@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
 <launch>
-
-    <arg name= "namespace"					        default = "drone1"/>
+    <arg name= "namespace"					                default = "red"/>
     <arg name= "estimated_pose_topic" 	            default = "self_localization/pose"/>
     <arg name= "estimated_speed_topic" 	            default = "self_localization/speed"/>
-    <arg name= "camera_name"					    default = "realsense_t265"/>
-    <arg name= "realsense_odom_topic"			    default = "$(arg camera_name)/odom/sample"/> 
+    <arg name= "estimated_odom_topic" 	            default = "odometry"/>
+    <arg name= "camera_name"					              default = "realsense_t265"/>
+    <arg name= "realsense_odom_topic"			          default = "$(arg camera_name)/odom/sample"/> 
 
     <include file="$(find realsense2_camera)/launch/rs_t265.launch">
         <arg name="camera"              value ="$(arg namespace)/$(arg camera_name)"/>
@@ -21,15 +21,18 @@
         <!-- <arg name="initial_reset"       value="false"/> -->
         <arg name="initial_reset"       value="true"/>
         <arg name="publish_odom_tf"     value="false"/>
-
     </include>
 
     <group ns="$(arg namespace)">
         <param name= "~namespace"                        value="$(arg namespace)"                       type="str" />
         <param name= "~estimated_pose_topic"             value="$(arg estimated_pose_topic)"            type="str" />
-        <param name= "~estimated_speed_topic"             value="$(arg estimated_speed_topic)"            type="str" />
+        <param name= "~estimated_speed_topic"            value="$(arg estimated_speed_topic)"           type="str" />
+        <param name= "~estimated_odom_topic"             value="$(arg estimated_odom_topic)"            type="str" />
         <param name= "~realsense_odom_topic"             value="$(arg realsense_odom_topic)"            type="str" />
+
+
         <node name="realsense_t265_interface" pkg="realsense_t265_interface" type="realsense_t265_interface_node" output="screen"/>
+
     </group>
 </launch>
 

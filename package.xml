@@ -14,11 +14,9 @@
 	<depend>sensor_msgs</depend> 
 	<depend>geometry_msgs</depend>
 	<depend>mavros_msgs</depend>
-	<depend>robot_process</depend>
 	<depend>mav_msgs</depend>
 	<depend>nav_msgs</depend>
 	<depend>tf</depend>
 	<depend>tf2</depend>
-	<depend>ros_utils_lib</depend>
 
 </package>

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/build/linux-debug",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"realsense_t265_interface\\\" -I/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/include -I/home/miguel/icuas_ws/devel/include -I/home/miguel/icuas_ws/src/uav_ros_simulation/ros_packages/mav_comm/mav_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3   -std=c++11 -g   -std=gnu++14 -o CMakeFiles/realsense_t265_interface_node.dir/src/source/realsense_t265_interface_node.cpp.o -c /home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/source/realsense_t265_interface_node.cpp",
+  "file": "/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/source/realsense_t265_interface_node.cpp"
+},
+{
+  "directory": "/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/build/linux-debug",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"realsense_t265_interface\\\" -I/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/include -I/home/miguel/icuas_ws/devel/include -I/home/miguel/icuas_ws/src/uav_ros_simulation/ros_packages/mav_comm/mav_msgs/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3   -std=c++11 -g   -std=gnu++14 -o CMakeFiles/realsense_t265_interface_node.dir/src/source/realsense_t265_interface.cpp.o -c /home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/source/realsense_t265_interface.cpp",
+  "file": "/home/miguel/icuas_ws/src/cvar_icuas_project/repos/realsense_t265_interface/src/source/realsense_t265_interface.cpp"
+}
+]
